@@ -1,6 +1,6 @@
 import {useState} from "react"
 const PawsRatingInput = ({ rating, disabled, onChange }) => {
-const [activeRating,setactiveRating] = useState("empty")
+const [activeRating,setactiveRating] = useState(rating)
 
 return (
   <> 
@@ -13,19 +13,29 @@ return (
 
     <div className="rating-input">
       <div className={`${activeRating >= 1 ? "filled" : "empty"}`}>
-        <i className="fa fa-paw" onMouseEnter= {(e) => {setactiveRating(1)}}></i>
+        <i className="fa fa-paw" 
+        onMouseEnter= {(e) => {if(!disabled) setactiveRating(1)}}
+        onMouseLeave= {(e) => {if(!disabled) setactiveRating(rating)}}></i>
       </div>
       <div className={`${activeRating >= 2 ? "filled" : "empty"}`}>
-        <i className="fa fa-paw" onMouseEnter= {(e) => {setactiveRating(2)}}></i>
+        <i className="fa fa-paw" 
+        onMouseEnter= {(e) => {if(!disabled) setactiveRating(2)}} 
+        onMouseLeave= {(e) => {if(!disabled) setactiveRating(rating)}}></i>
       </div>
       <div className={`${activeRating >= 3 ? "filled" : "empty"}`}>
-        <i className="fa fa-paw" onMouseEnter= {(e) => {setactiveRating(3)}}></i>
+        <i className="fa fa-paw" 
+        onMouseEnter= {(e) => {if(!disabled) setactiveRating(3)}}
+        onMouseLeave= {(e) => {if(!disabled) setactiveRating(rating)}}></i>
       </div>
       <div className={`${activeRating >= 4 ? "filled" : "empty"}`}>
-        <i className="fa fa-paw" onMouseEnter= {(e) => {setactiveRating(4)}}></i>
+        <i className="fa fa-paw" 
+        onMouseEnter= {(e) => {if(!disabled) setactiveRating(4)}}
+        onMouseLeave= {(e) => {if(!disabled) setactiveRating(rating)}}></i>
       </div>
       <div className={`${activeRating >= 5 ? "filled" : "empty"}`}>
-        <i className="fa fa-paw" onMouseEnter= {(e) => {setactiveRating(5)}}></i>
+        <i className="fa fa-paw" 
+        onMouseEnter= {(e) => {if(!disabled) setactiveRating(5)}}
+        onMouseLeave= {(e) => {if(!disabled) setactiveRating(rating)}}></i>
       </div>
     </div>
 
